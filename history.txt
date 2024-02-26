@@ -1,0 +1,19 @@
+mkdir hw
+cd hw
+touch pets
+touch packAnimals
+nano pets
+nano packAnimals
+cat pets packAnimals > animals
+mv animals friendsPerson
+nano friendsPerson
+mkdir fp
+mv friendsPerson fp/
+
+sudo su
+cd ~
+wget -c https://dev.mysql.com/get/mysql-apt-config_0.8.29-1_all.deb
+dpkg -i mysql-apt-config_0.8.29-1_all.deb
+dpkg -r mysql-apt-config
+
+history
