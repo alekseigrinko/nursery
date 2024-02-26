@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3d3cbedc-ed60-4814-80c1-14afc5ee07a4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nursery.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/Animal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/AnimalSpecie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/Specie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/pack_animal/Camel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/pack_animal/Donkey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/pack_animal/Horse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/pack_animal/PackAnimal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/pet/Cat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/pet/Dog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/pet/Hamster.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/pet/Pet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/AnimalService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/ConnectionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/CreateBDService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/RunService.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2cdSzHfvVZPd90EeIfl1JlEzFfW" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/dev2/nursery&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\dev2\nursery\src" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3d3cbedc-ed60-4814-80c1-14afc5ee07a4" name="Changes" comment="" />
+      <created>1708440224154</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1708440224154</updated>
+      <workItem from="1708440225377" duration="2662000" />
+      <workItem from="1708488661496" duration="7484000" />
+      <workItem from="1708507508737" duration="8856000" />
+      <workItem from="1708526134821" duration="1160000" />
+      <workItem from="1708533600302" duration="2624000" />
+      <workItem from="1708572944037" duration="4023000" />
+      <workItem from="1708579993923" duration="47000" />
+      <workItem from="1708585970568" duration="1794000" />
+      <workItem from="1708747188659" duration="1320000" />
+      <workItem from="1708750997028" duration="4493000" />
+      <workItem from="1708763514471" duration="6716000" />
+      <workItem from="1708775711622" duration="4337000" />
+      <workItem from="1708781309107" duration="1709000" />
+      <workItem from="1708835856212" duration="2103000" />
+      <workItem from="1708841510981" duration="1686000" />
+      <workItem from="1708924527662" duration="888000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
