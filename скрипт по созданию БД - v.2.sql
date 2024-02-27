@@ -117,3 +117,13 @@ birthday DATETIME NOT NULL,
 FOREIGN KEY (animal_id) REFERENCES animals(animal_id),
 FOREIGN KEY (specie_id) REFERENCES animal_species(animal_species_id));
 
+DROP TABLE IF EXISTS combine_table;
+CREATE TABLE combine_table (
+combine_table_id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+animal_id BIGINT NOT NULL,
+specie_id BIGINT NOT null,
+name VARCHAR(512) NOT NULL,
+commands VARCHAR(512) NOT null,
+birthday DATETIME NOT NULL,
+FOREIGN KEY (animal_id) REFERENCES animals(animal_id),
+FOREIGN KEY (specie_id) REFERENCES animal_species(animal_species_id));
