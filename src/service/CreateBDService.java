@@ -4,7 +4,7 @@ import model.Animal;
 import model.AnimalSpecie;
 import model.Specie;
 
-import java.util.Arrays;
+import java.util.List;
 
 public class CreateBDService {
     private ConnectionService connectionService;
@@ -401,6 +401,19 @@ public class CreateBDService {
                 "FOREIGN KEY (specie_id) REFERENCES animal_species(animal_species_id));");
     }
 
+    public void createCombineTable() {
+        connectionService.putInfo("DROP TABLE IF EXISTS combine_table;");
+        connectionService.putInfo("CREATE TABLE combine_table (\n" +
+                "combine_table_id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,\n" +
+                "animal_id BIGINT NOT NULL,\n" +
+                "specie_id BIGINT NOT null,\n" +
+                "name VARCHAR(512) NOT NULL,\n" +
+                "commands VARCHAR(512) NOT NULL,\n" +
+                "birthday DATETIME NOT NULL,\n" +
+                "FOREIGN KEY (animal_id) REFERENCES animals(animal_id),\n" +
+                "FOREIGN KEY (specie_id) REFERENCES animal_species(animal_species_id));");
+    }
+
     private String selectSpecieIdToAnimalId(int animalId) {
         return connectionService.
                 getInfo("select specie_id from animals \n" +
@@ -485,5 +498,79 @@ public class CreateBDService {
             case "CAMEL" -> connectionService.putInfo("delete from camels where animal_id = " + animalId + ";");
             case "DONKEY" -> connectionService.putInfo("delete from donkeys where animal_id = " + animalId + ";");
         }
+    }
+
+    public void combineAllTables() {
+        createCombineTable();
+        String[] tables = {"cats", "dogs", "hamsters", "horses", "camels", "donkeys"};
+        for (int i = 0; i < tables.length; i++) {
+            connectionService.putInfo("INSERT INTO combine_table (animal_id, specie_id, name, commands, birthday)  \n" +
+                    "SELECT animals.animal_id, animals.specie_id, name, commands, birthday FROM " + tables[i] + "\n" +
+                    "left join animals on " + tables[i] + ".animal_id  = animals.animal_id ;");
+        }
+    }
+
+    public void combineHorsesAndDonkeysTables() {
+        createCombineTable();
+        String[] tables = {"horses", "donkeys"};
+        for (int i = 0; i < tables.length; i++) {
+            connectionService.putInfo("INSERT INTO combine_table (animal_id, specie_id, name, commands, birthday)  \n" +
+                    "SELECT animals.animal_id, animals.specie_id, name, commands, birthday FROM " + tables[i] + "\n" +
+                    "left join animals on " + tables[i] + ".animal_id  = animals.animal_id ;");
+        }
+    }
+
+    public void addAnimal(String name, String specie, List<String> commands, String birthday) {
+        try {
+            int specieId = selectSpecieToName(specie).getAnimalSpeciesId();
+            insertAnimal(animalService.add(name, specieId, commands, birthday));
+        } catch (Exception e) {
+            System.out.println("Ошибка ввода вида животного!");
+        }
+    }
+
+    private void insertAnimal(Animal animal) {
+        String animalId = insertAnimal(animal.getSpecieId());
+        String nameSpecie = selectSpecieToAnimalId(Integer.parseInt(animalId));
+        String packAnimalOrPetId = "";
+        if (nameSpecie.equals("CAT") || nameSpecie.equals("DOG") || nameSpecie.equals("HAMSTER")) {
+            packAnimalOrPetId = insertPet(animalId, String.valueOf(animal.getSpecieId()));
+            switch (nameSpecie) {
+                case "CAT" ->
+                        connectionService.putInfo("INSERT INTO cats (animal_id, pet_id, name, commands, birthday) VALUES " +
+                                "('" + animalId + "', '" + packAnimalOrPetId + "', '" + animal.getName()
+                                + "', '" + convertCommands(animal.getCommands()) + "', '" + animal.getBirthday() + "');");
+                case "DOG" -> connectionService.putInfo("INSERT INTO dogs (animal_id, pet_id, name, commands, birthday) VALUES " +
+                        "('" + animalId + "', '" + packAnimalOrPetId + "', '" + animal.getName()
+                        + "', '" + convertCommands(animal.getCommands()) + "', '" + animal.getBirthday() + "');");
+                case "HAMSTER" -> connectionService.putInfo("INSERT INTO hamsters (animal_id, pet_id, name, commands, birthday) VALUES " +
+                        "('" + animalId + "', '" + packAnimalOrPetId + "', '" + animal.getName()
+                        + "', '" + convertCommands(animal.getCommands()) + "', '" + animal.getBirthday() + "');");
+            }
+        } else if (nameSpecie.equals("HORSE") || nameSpecie.equals("CAMEL") || nameSpecie.equals("DONKEY")) {
+            packAnimalOrPetId = insertPackAnimal(animalId, String.valueOf(animal.getSpecieId()));
+            switch (nameSpecie) {
+                case "HORSE" -> connectionService.putInfo("INSERT INTO horses (animal_id, pack_animal_id, name, commands, birthday) VALUES " +
+                        "('" + animalId + "', '" + packAnimalOrPetId + "', '" + animal.getName()
+                        + "', '" + convertCommands(animal.getCommands()) + "', '" + animal.getBirthday() + "');");
+                case "CAMEL" -> connectionService.putInfo("INSERT INTO camels (animal_id, pack_animal_id, name, commands, birthday) VALUES " +
+                        "('" + animalId + "', '" + packAnimalOrPetId + "', '" + animal.getName()
+                        + "', '" + convertCommands(animal.getCommands()) + "', '" + animal.getBirthday() + "');");
+                case "DONKEY" -> connectionService.putInfo("INSERT INTO donkeys (animal_id, pack_animal_id, name, commands, birthday) VALUES " +
+                        "('" + animalId + "', '" + packAnimalOrPetId + "', '" + animal.getName()
+                        + "', '" + convertCommands(animal.getCommands()) + "', '" + animal.getBirthday() + "');");
+            }
+        }
+    }
+
+    private String convertCommands(List<String> commands) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < commands.size(); i++) {
+            sb.append(commands.get(i));
+            if (i != commands.size() - 1) {
+                sb.append(", ");
+            }
+        }
+        return sb.toString();
     }
 }

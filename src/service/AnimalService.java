@@ -17,9 +17,11 @@ public class AnimalService {
     private List<String> namesPet;
     private List<String> namesPackAnimals;
     private List<String> commandsPackAnimals;
+    private DateTimeFormatter formatter;
 
     public AnimalService() {
         this.count = 0;
+        formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:s");
         createdLists();
     }
 
@@ -70,8 +72,32 @@ public class AnimalService {
         List<String> commands = Arrays.stream(commandElements).toList();
         animal.setCommands(commands);
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:s");
         animal.setBirthday(LocalDate.parse(elements[5], formatter));
+        return animal;
+    }
+
+    public Animal add(String name, int specieId, List<String> commands, String birthday) {
+        Animal animal = new Animal();
+        try {
+            if (!name.isBlank()) {
+                animal.setName(name);
+            } else {
+                throw new Exception("Имя не может быть пустым!");
+            }
+            if (commands.size() > 0) {
+                animal.setCommands(commands);
+            } else {
+                throw new Exception("Список команд не может быть пустым!");
+            }
+            animal.setSpecieId(specieId);
+            try {
+                animal.setBirthday(LocalDate.parse(birthday, DateTimeFormatter.ofPattern("yyyy-MM-dd")));
+            } catch (Exception e) {
+                System.out.println("Ошибка формата ввода даты!");
+            }
+        } catch (Exception e) {
+            System.out.println("Ошибка внесения данных животного:" + e.getMessage());
+        }
         return animal;
     }
 

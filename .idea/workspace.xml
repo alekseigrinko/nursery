@@ -1,30 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3d3cbedc-ed60-4814-80c1-14afc5ee07a4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nursery.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Animal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/AnimalSpecie.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Specie.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/pack_animal/Camel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/pack_animal/Donkey.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/pack_animal/Horse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/pack_animal/PackAnimal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/pet/Cat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/pet/Dog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/pet/Hamster.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/pet/Pet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/AnimalService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/ConnectionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/CreateBDService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/RunService.java" afterDir="false" />
+    <list default="true" id="3d3cbedc-ed60-4814-80c1-14afc5ee07a4" name="Changes" comment="feature: добавлен функционал по работе с животными">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/AnimalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/AnimalService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/CreateBDService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/CreateBDService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/RunService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/RunService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +73,20 @@
       <workItem from="1708835856212" duration="2103000" />
       <workItem from="1708841510981" duration="1686000" />
       <workItem from="1708924527662" duration="888000" />
+      <workItem from="1708927242122" duration="1856000" />
+      <workItem from="1708937305354" duration="342000" />
+      <workItem from="1708945420305" duration="1539000" />
+      <workItem from="1709007248649" duration="3069000" />
+      <workItem from="1709026637930" duration="3268000" />
     </task>
+    <task id="LOCAL-00001" summary="feature: добавлен функционал по работе с животными">
+      <created>1708927385121</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1708927385121</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -108,5 +102,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feature: добавлен функционал по работе с животными" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: добавлен функционал по работе с животными" />
   </component>
 </project>
